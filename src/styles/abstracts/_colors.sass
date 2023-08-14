@@ -1,0 +1,6 @@
+$colors: ("blanc": "#FFFFFF", "noir-encre": "#151515" ,"bleu-klein": "#0740AF" ,"rouge-ruban": "#EC0B43", "jaune-aurore": "#FFCA2C", "bleu-ciel-francais": "#8BB7FC", "jaune-naples": "FFE6A9", "rose-dragee": "FFD4E2")
+
+@each $name, $color in $colors
+    :root
+        --clr-#{$name}: #{$color}
+        --background-#{$name}: #{$color}
