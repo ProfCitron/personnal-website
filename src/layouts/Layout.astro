@@ -1,5 +1,7 @@
 ---
 import '../styles/main.sass';
+
+import HeaderNavigation from '../components/HeaderNavigation.astro';
 interface Props {
 	title: string;
 }
@@ -14,14 +16,25 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="main-layout">
+		<div class="main-layout__topbar"></div>
+		<HeaderNavigation />
 		<slot />
 	</body>
 </html>
 <style lang="sass">
+	@use '../styles/abstracts/mixins' as *
+
 	body
-		background-color: var(--background-blanc)
+		min-height: 100vh
+
+	.main-layout
+		@include addFont('Poppins')
+		&__topbar
+			background-color: var(--background-jaune-aurore)
+			min-height: .8rem
 </style>

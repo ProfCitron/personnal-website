@@ -1,0 +1,73 @@
+---
+
+---
+<script>
+    import {Alpine} from "alpinejs";
+    window.Alpine = Alpine;
+    Alpine.start();
+</script>
+<nav>
+    <a href="/">
+        <img src="/images/logo-prof-citron.svg" alt="Logo Prof Citron">
+    </a>
+    <div>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Tutoriels</a></li>
+            <li><a href="#">Qui suis-je ?</a></li>
+        </ul>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="devicon-github-original colored"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="devicon-twitter-original"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<style lang="sass">
+    @use '../styles/abstracts/variables'
+    nav
+      background-color: var(--background-blanc)
+      border-bottom: .1rem solid var(--background-noir-encre)
+      display: flex
+      align-items: center
+      padding: 1rem 2rem calc(1rem - 3px) 2rem
+      gap: 2rem
+
+      > div
+        display: flex
+        gap: 2rem
+        justify-content: space-between
+        align-items: center
+        flex-grow: 1
+
+    ul
+      display: flex
+      font-size: 1rem
+      gap: 1.6em
+
+      &:last-child
+        gap: 1rem
+
+      a
+        color: var(--clr-noir-encre)
+        text-decoration: none
+        transition-delay: 0.2s
+
+        &:hover
+          color: var(--clr-bleu-klein)
+
+        i
+          font-size: 1.5rem
+
+    img
+      height: 40px
+
+</style>
